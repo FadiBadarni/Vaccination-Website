@@ -22,10 +22,13 @@
           </button>
           <div class="collapse navbar-collapse" id="navbarToggle">
             <div class="navbar-nav mr-auto">
-              <a class="nav-item nav-link" href="{% url 'Web-Home' %}">Home</a>
-              <a class="nav-item nav-link" href="{% url 'About-Page' %}">About</a>
+                <a class="nav-item nav-link" href="{% url 'Web-Home' %}">Home</a>
+                <a class="nav-item nav-link" href="{% url 'appointment' %}">Book An Appointment</a>
+                <a class="nav-item nav-link" href="{% url 'About-Page' %}">FAQ</a>
+                <a class="nav-item nav-link" href="{% url 'About-Page' %}">About</a>
+                <a class="nav-item nav-link" href="{% url 'About-Page' %}">Contact</a>
             </div>
-            <!-- Navbar Right Side -->
+            <!-- Navigation Bar Right Side -->
             <div class="navbar-nav">
               {% if user.is_authenticated %}
                 <a class="nav-item nav-link" href="{% url 'profile' %}">Profile</a>
@@ -40,31 +43,37 @@
         </div>
       </nav>
     </header>
-    <main role="main" class="container">
-      <div class="row">
-        <div class="col-md-8">
-          {% if messages %}
-            {% for message in messages %}
-              <div class="alert alert-{{ message.tags }}">
-                {{ message }}
-              </div>
-            {% endfor %}
-          {% endif %}
-          {% block content %}{% endblock %}
-        </div>
-        <div class="col-md-4">
-          <div class="content-section">
-            <h3>Covid-19 Related Links</h3>
-              <div class="list-group">
-                <a href="#" class="list-group-item list-group-item">Link 1</a>
-                <a href="#" class="list-group-item list-group-item">Link 2</a>
-                <a href="#" class="list-group-item list-group-item">Link 3</a>
-                <a href="#" class="list-group-item list-group-item">Link 4</a>
-              </div>
-          </div>
-        </div>
-      </div>
-    </main>
+
+
+    <footer>
+    {% block footer %}
+        <main role="main" class="container">
+            <div class="row">
+                <div class="col-md-8">
+                    {% if messages %}
+                        {% for message in messages %}
+                            <div class="alert alert-{{ message.tags }}">
+                                {{ message }}
+                            </div>
+                        {% endfor %}
+                    {% endif %}
+                    {% block content %}{% endblock %}
+                </div>
+                <div class="col-md-4">
+                    <div class="content-section">
+                        <h3>Covid-19 Related Links</h3>
+                        <div class="list-group">
+                            <a href="#" class="list-group-item">Link 1</a>
+                            <a href="#" class="list-group-item">Link 2</a>
+                            <a href="#" class="list-group-item">Link 3</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    {% endblock %}
+    </footer>
+
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
