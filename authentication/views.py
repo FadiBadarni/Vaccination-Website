@@ -10,6 +10,8 @@ def about(request):
     return render(request, 'authentication/about.html')
 
 
+def faq(request):
+    return render(request, 'authentication/FAQ.html')
 
 
 
