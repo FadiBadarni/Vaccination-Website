@@ -1,5 +1,66 @@
 {% extends "authentication/base.html" %}
+
 {% block content %}
+    {% block footer %}
+        <style>
+            .footer {
+                position: fixed;
+                left: 0;
+                bottom: 0;
+                width: 100%;
+                background-color: #9f0dc7;
+                color: #070606;
+                text-align: center;
+            }
+        </style>
 
+        <div class="footer">
+            <footer class="bg-light text-center text-lg-start ">
+                <div class="container p-1">
+                    <section class="">
+                        <form action="">
+                            <div class="row d-flex justify-content-center">
+                                <div class="col-auto">
+                                    <p class="pt-2">
+                                        <strong>Sign up for our newsletter</strong>
+                                    </p>
+                                </div>
+                                <div class="col-md-5 col-12">
+                                    <div class="form-outline mb-4">
+                                        <input type="email" id="form5Example2" class="form-control"/>
+                                    </div>
+                                </div>
+                                <div class="col-auto">
+                                    <button type="submit" class="btn btn-primary mb-4">
+                                        Subscribe
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </section>
+                </div>
+                <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
+                    © 2021 Copyright:
+                    <a class="text-dark" href="#">Co-Vaccine</a>
+                </div>
+            </footer>
+        </div>
+
+        <section class="section opening-section">
+            <div class="container-xl">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="cover">
+                            <img class="w-100 d-none d-sm-block"
+                                 src="https://mako.devdinocdn.com/CoronaVirusStats/images/cover.jpg" alt="קאבר">
+                            <img class="w-100 d-block d-sm-none"
+                                 src="https://mako.devdinocdn.com/CoronaVirusStats/images/cover_m.jpg" alt="קאבר">
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    {% endblock footer %}
 {% endblock content %}
-

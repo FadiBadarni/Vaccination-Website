@@ -15,6 +15,9 @@ def register(request):
         # check if form received is valid
         if form.is_valid():
             form.save()     # Save the user
+
+
+
             username = form.cleaned_data.get('username')
             messages.success(request, f'Account Registered For {username} .')       # Flash message usage with f_string
             return redirect('login')   # Redirect user to home page
