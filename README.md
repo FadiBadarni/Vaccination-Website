@@ -25,11 +25,11 @@ Sweetify is being used for the temporary messages system , https://github.com/At
 
 ## How To Use :
 There are 3 ways in order to use the website on your local machine .
-## 1) Cloning The Repository :
+# 1) Cloning The Repository :
 First you will need to navigate to : https://github.com/FadiBadarni/mysite then above the list of files there appears a code button then choose your preffered way of cloning the repository .
-## 2) Downloading The Code : 
+# 2) Downloading The Code : 
 First you will need to navigate to : https://github.com/FadiBadarni/mysite then above the list of files there appears a code button then choose download ZIP
-## 3) GitHub Desktop : 
+# 3) GitHub Desktop : 
 First you will need to navigate to : https://github.com/FadiBadarni/mysite then above the list of files there appears a code button then choose Open with GitHub Desktop
 
 Once the project is on your local machine you will need to open it with pycharm , afterwards a brief installation of CrispyForms is required using pyCharm terminal through hitting the terminal button that is found at the bottom of the pycharm application then inserting these lines of codes inside of it :
@@ -37,7 +37,7 @@ Once the project is on your local machine you will need to open it with pycharm 
 Afterwards you can run the server on your local host using : 
 # python manage.py runserver
 
-## Navigation In The Website :
+### Navigation In The Website :
 The website is made so it can be easy to understand and navigate in , first the user would be required to register a new account , afterwards the user goes through the login process with being able to reset his password at any given time the user would like to (through email verfication) , after logging in a new tab in the navigation bar appears in addition to the other tabs which is appointment booking because that functionality is only available upon logging into an acount .
 The navigation bar contains many elements which are the following :
 # 1) Home button :
