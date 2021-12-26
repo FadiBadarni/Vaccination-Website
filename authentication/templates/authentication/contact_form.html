@@ -1,0 +1,25 @@
+{% extends "authentication/base.html" %}
+{% load crispy_forms_tags %}
+{% load static %}
+
+{% block content %}
+    {% block footer %}
+
+
+
+        <h3>Contact Form</h3>
+
+            <form method="POST" action="{% url "Contact-Page" %}">
+                <ul class="ContactForm">
+                    <label for="fname">Test</label>
+                    <medium id="fname" class="ContactForm">{{ form.first_name }}</medium>
+                    <label for="lname">Test</label>
+                    <medium id="lname" class="ContactForm">{{ form.last_name }}</medium>
+                    <label for="message">Test</label>
+                    <medium id="message" class="ContactForm">{{ form.message }}</medium>
+                </ul>
+                <button type="submit">SEND</button>
+            </form>
+
+    {% endblock footer %}
+{% endblock content %}

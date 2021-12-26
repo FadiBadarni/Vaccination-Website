@@ -27,6 +27,13 @@
 
     <link rel="stylesheet" type="text/css" href="{% static 'authentication/static/authentication/main.css' %}">
 
+    <style>
+        body {
+            background-image: url("https://i.ibb.co/K92XG0b/imageedit-1-4863776685.png");
+
+
+        }
+    </style>
 
 </head>
 <body>
@@ -47,7 +54,7 @@
                             Appointment</i></a>
                     {% endif %}
                     <a class="nav-item nav-link" href="{% url 'FAQ-Page' %}"><i class="fa">&#xf27a; FAQ</i></a>
-                    <a class="nav-item nav-link" href="{% url 'About-Page' %}"><i class="fa">&#xf059; About</i></a>
+                    <a class="nav-item nav-link" href="{% url 'About-Page' %}"><i class="fa">&#xf059; About The Virus</i></a>
                     <a class="nav-item nav-link" href="{% url 'Contact-Page' %}"><i class="fa">&#xf1d8; Contact
                         Us</i></a>
                 </div>
@@ -84,19 +91,22 @@
                     {% block content %}{% endblock %}
                 </div>
                 <div class="col-md-4">
-                    <div class="content-section">
+                    <div class="site-header">
                         <h3>Covid-19 Related Links</h3>
                         <div class="list-group">
                             <a href="https://www.gavi.org/covid19-vaccines?gclid=Cj0KCQiAqvaNBhDLARIsAH1Pq50rz2lKx8ljjNQCp0d_tGs7NV3fSRf3YQevCvtXbENNUk5io1I1a8QaAvdvEALw_wcB"
-                               class="list-group-item">Link 1</a>
+                               class="list-group-item">COVID-19 vaccines</a>
                             <a href="https://shareverified.com/2021/07/13/what-does-it-feel-like-to-have-covid-19/"
-                               class="list-group-item">Link 2</a>
-                            <a href="https://www.worldometers.info/coronavirus/" class="list-group-item">Link 3</a>
+                               class="list-group-item">What does it feel like to have COVID-19?</a>
+                            <a href="https://www.worldometers.info/coronavirus/" class="list-group-item">worldometers</a>
                         </div>
+
                     </div>
+
                 </div>
             </div>
         </main>
+
     {% endblock %}
 </footer>
 

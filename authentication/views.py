@@ -1,5 +1,9 @@
 from django.shortcuts import render
-from django.core.mail import send_mail
+from django.views.generic import CreateView
+from .models import Contact
+from django.urls import reverse_lazy
+from django.http import HttpResponse
+from .forms import ContactForm
 
 
 def home(request):
@@ -14,23 +18,13 @@ def faq(request):
     return render(request, 'authentication/FAQ.html')
 
 
-def contact(request):
-    if request.method == 'POST':
-        name = request.POST.get('full-name')
-        email = request.POST.get('email')
-        subject = request.POST.get('subject')
-        message = request.POST.get('message')
-        data = {
-            'name': name,
-            'email': email,
-            'subject': subject,
-            'message': message,
-        }
-        message = '''
-        New message: {}
-        From: {}
-        '''.format(data['message'], data['email'])
-        send_mail(data['subject'], message, '', ['covaccinesce@gmail.com'])
-    return render(request, 'authentication/contact.html')
 
 
+class ContactCreate(CreateView):
+    model = Contact
+    fields = ["first_name", "last_name", "message"]
+    success_url = reverse_lazy("thanks")
+
+
+def thanks(request):
+    return HttpResponse("Thank you! Will get in touch soon.")
