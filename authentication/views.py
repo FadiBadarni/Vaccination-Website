@@ -21,8 +21,8 @@ def faq(request):
 class ContactCreate(CreateView):
     model = Contact
     fields = ["first_name", "last_name", "message"]
-    success_url = reverse_lazy("thanks")
+    success_url = reverse_lazy("contact_recieved")
 
 
-def thanks(request):
-    return HttpResponse("Thank you! Will get in touch soon.")
+def contact_recieved(request):
+    return render(request, 'authentication/contact_recieved.html')

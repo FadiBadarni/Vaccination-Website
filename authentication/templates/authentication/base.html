@@ -34,6 +34,24 @@
 
         }
     </style>
+    <style>
+        .floating-right-bottom-btn {
+            position: absolute;
+            right: 8px;
+            bottom: 16px;
+            botton: 16px;
+            padding: 20px;
+            cursor: pointer;
+            color: #000000;
+            background-color: rgba(159, 13, 199, 0.47);
+            border-radius: 80%;
+            position:fixed;
+        }
+
+        .floating-right-bottom-btn:hover {
+            background-color: rgba(204, 34, 34, 0.56);
+        }
+    </style>
 
 </head>
 <body>
@@ -54,7 +72,8 @@
                             Appointment</i></a>
                     {% endif %}
                     <a class="nav-item nav-link" href="{% url 'FAQ-Page' %}"><i class="fa">&#xf27a; FAQ</i></a>
-                    <a class="nav-item nav-link" href="{% url 'About-Page' %}"><i class="fa">&#xf059; About The Virus</i></a>
+                    <a class="nav-item nav-link" href="{% url 'About-Page' %}"><i class="fa">&#xf059; About The
+                        Virus</i></a>
                     <a class="nav-item nav-link" href="{% url 'Contact-Page' %}"><i class="fa">&#xf1d8; Contact
                         Us</i></a>
                 </div>
@@ -74,6 +93,7 @@
     </nav>
 </header>
 
+<button class="floating-right-bottom-btn"><h4><i class="fa fa-ambulance"></i></h4> Emergency Button</button>
 
 <footer>
     {% block footer %}
@@ -98,7 +118,8 @@
                                class="list-group-item">COVID-19 vaccines</a>
                             <a href="https://shareverified.com/2021/07/13/what-does-it-feel-like-to-have-covid-19/"
                                class="list-group-item">What does it feel like to have COVID-19?</a>
-                            <a href="https://www.worldometers.info/coronavirus/" class="list-group-item">worldometers</a>
+                            <a href="https://www.worldometers.info/coronavirus/"
+                               class="list-group-item">worldometers</a>
                         </div>
 
                     </div>
