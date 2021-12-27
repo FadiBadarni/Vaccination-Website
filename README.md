@@ -34,8 +34,12 @@ First you will need to navigate to : https://github.com/FadiBadarni/mysite then 
 
 Once the project is on your local machine you will need to open it with pycharm , afterwards a brief installation of CrispyForms is required using pyCharm terminal through hitting the terminal button that is found at the bottom of the pycharm application then inserting these lines of codes inside of it :
 ### pip install django-crispy-forms 
+### npm install sweetalert2
 Afterwards you can run the server on your local host using : 
 ### python manage.py runserver
+
+### Info About The DataBase : 
+
 
 ## Navigation In The Website :
 The website is made so it can be easy to understand and navigate in , first the user would be required to register a new account , afterwards the user goes through the login process with being able to reset his password at any given time the user would like to (through email verfication) , after logging in a new tab in the navigation bar appears in addition to the other tabs which is appointment booking because that functionality is only available upon logging into an acount .
