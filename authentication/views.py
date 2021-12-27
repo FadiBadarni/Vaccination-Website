@@ -18,8 +18,6 @@ def faq(request):
     return render(request, 'authentication/FAQ.html')
 
 
-
-
 class ContactCreate(CreateView):
     model = Contact
     fields = ["first_name", "last_name", "message"]

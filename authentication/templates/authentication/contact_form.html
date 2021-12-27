@@ -4,22 +4,43 @@
 
 {% block content %}
     {% block footer %}
+        <style>
+            table {
+                font-family: arial, sans-serif;
+                border-collapse: collapse;
+                width: 100%;
+            }
+
+            td, th {
+                border: 1px solid #dddddd;
+                text-align: left;
+                padding: 8px;
+            }
+
+            tr:nth-child(even) {
+                background-color: #dddddd;
+            }
+        </style>
 
 
+        <h3>Contact Us, We Would Like To Hear From You</h3>
 
-        <h3>Contact Form</h3>
-
-            <form method="POST" action="{% url "Contact-Page" %}">
-                <ul class="ContactForm">
-                    <label for="fname">Test</label>
-                    <medium id="fname" class="ContactForm">{{ form.first_name }}</medium>
-                    <label for="lname">Test</label>
-                    <medium id="lname" class="ContactForm">{{ form.last_name }}</medium>
-                    <label for="message">Test</label>
-                    <medium id="message" class="ContactForm">{{ form.message }}</medium>
-                </ul>
-                <button type="submit">SEND</button>
-            </form>
+        <form method="POST" action="{% url "Contact-Page" %}">
+            <ul class="ContactForm">
+                <table>
+                    <td><label for="fname">First Name</label>
+                        <medium id="fname" class="ContactForm">{{ form.first_name }}</medium>
+                    </td>
+                    <td><label for="lname">Last Name</label>
+                        <medium id="lname" class="ContactForm">{{ form.last_name }}</medium>
+                    </td>
+                    <td><label for="message">Subject</label>
+                        <medium id="message" class="ContactForm">{{ form.message }}</medium>
+                    </td>
+                </table>
+            </ul>
+            <button type="submit">SEND</button>
+        </form>
 
     {% endblock footer %}
 {% endblock content %}
