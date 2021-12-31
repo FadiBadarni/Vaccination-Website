@@ -26,6 +26,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <link rel="stylesheet" type="text/css" href="{% static 'authentication/static/authentication/main.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'users/static/users/register-type.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'users/static/users/register-doctor.css' %}">
 
     <style>
         body {
@@ -85,7 +87,7 @@
                     {% else %}
                         <a class="nav-item nav-link" href="{% url 'profile' %}"><i class="fa">&#xf2bd; Profile</i></a>
                         <a class="nav-item nav-link" href="{% url 'login' %}"><i class="fa">&#xf13e; Login</i></a>
-                        <a class="nav-item nav-link" href="{% url 'register' %}"><i class="fa">&#xf234; Register</i></a>
+                        <a class="nav-item nav-link" href="{% url 'register-type' %}"><i class="fa">&#xf234; Register</i></a>
                     {% endif %}
                 </div>
             </div>
