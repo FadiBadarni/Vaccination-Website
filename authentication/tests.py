@@ -29,3 +29,7 @@ class TestPage(TestCase):
         self.assertTemplateUsed(response, 'authentication/FAQ.html')
         self.assertContains(response, 'Frequently Asked Questions')
 
+    def test_contact(self):
+        response = self.client.get('/contact')
+        self.assertContains(response, 'Contact-Page', 0, 301)
+

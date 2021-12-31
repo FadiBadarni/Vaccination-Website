@@ -5,18 +5,7 @@
 {% block content %}
     {% block footer %}
 
-        <h3>Contact Us, We Would Like To Hear From You</h3>
-        <form method="POST" action="{% url "Contact-Page" %}">
-            {% csrf_token %}
-            <ul class="ContactForm">
-                Name
-                <medium id="fname" class="ContactForm">{{ form.first_name }}</medium>
-                Subject
-                <medium id="message" class="ContactForm">{{ form.message }}</medium>
-            </ul>
-            <button type="submit">Send Request</button>
 
-        </form>
 
 
 
