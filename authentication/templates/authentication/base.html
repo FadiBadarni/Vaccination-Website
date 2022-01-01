@@ -28,15 +28,13 @@
     <link rel="stylesheet" type="text/css" href="{% static 'authentication/static/authentication/main.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'users/static/users/register-type.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'users/static/users/register-doctor.css' %}">
-    <link rel="stylesheet" type="text/css" href="{% static 'authentication/static/authentication/home.css' %}">
 
     <style>
         body {
             background-image: url("https://i.ibb.co/K92XG0b/imageedit-1-4863776685.png");
-
-
         }
     </style>
+
     <style>
         .floating-right-bottom-btn {
             position: absolute;
@@ -103,7 +101,7 @@
     {% block footer %}
 
         <main role="main" class="container">
-            <div class="row">
+            <div class="row" >
                 <div class="col-md-8">
                     {% if messages %}
                         {% for message in messages %}
