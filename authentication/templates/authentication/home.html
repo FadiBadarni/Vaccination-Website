@@ -1,4 +1,5 @@
 {% extends "authentication/base.html" %}
+{% load static %}
 {% block content %}
 
     <div class="col-12">
@@ -122,6 +123,84 @@
             </div>
         </div>
     </section>
+
+    <!-- Table section -->
+
+    <div style="width: 150%; display: table">
+
+            <center>
+                <h2><b><p>The countries with the highest patient growth</p></b></h2>
+            </center>
+        <div style="background-color: rgba(134,14,189,0.48)">
+
+            <table class="table" border="1" style="text-align: center">
+                <thead>
+                <tr>
+                    <th>City</th>
+                    <th>New Patients</th>
+                    <th>Patients</th>
+                    <th>Deaths</th>
+                    <th>Recovered</th>
+                </tr>
+                </thead>
+                <tbody>
+
+                <tr>
+                    <td>
+                        France
+                    </td>
+                    <td>232,200</td>
+                    <td>9,972,800</td>
+                    <td>123,741</td>
+                    <td>8,091,292</td>
+                </tr>
+
+                <tr>
+                    <td>
+                        United Kingdom
+                    </td>
+                    <td>189,846</td>
+                    <td>12,937,886</td>
+                    <td>148,624</td>
+                    <td>10,314,726</td>
+                </tr>
+
+                <tr>
+                    <td>
+                        Italy
+                    </td>
+                    <td>144,243</td>
+                    <td>6,125,683</td>
+                    <td>137,402</td>
+                    <td>5,087,297</td>
+                </tr>
+
+                <tr>
+                    <td>
+                        Turkey
+                    </td>
+                    <td>40,786</td>
+                    <td>9,482,550</td>
+                    <td>82,361</td>
+                    <td>9,063,312</td>
+                </tr>
+
+                <tr>
+                    <td>
+                        Japan
+                    </td>
+                    <td>40,560</td>
+                    <td>1,210,853</td>
+                    <td>20,790</td>
+                    <td>1,013,362</td>
+                </tr>
+
+                </tbody>
+
+            </table>
+        </div>
+    </div>
+
 
 
 

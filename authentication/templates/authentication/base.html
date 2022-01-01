@@ -28,6 +28,7 @@
     <link rel="stylesheet" type="text/css" href="{% static 'authentication/static/authentication/main.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'users/static/users/register-type.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'users/static/users/register-doctor.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'authentication/static/authentication/home.css' %}">
 
     <style>
         body {
@@ -47,7 +48,7 @@
             color: #000000;
             background-color: rgba(159, 13, 199, 0.47);
             border-radius: 80%;
-            position:fixed;
+            position: fixed;
         }
 
         .floating-right-bottom-btn:hover {
@@ -87,7 +88,8 @@
                     {% else %}
                         <a class="nav-item nav-link" href="{% url 'profile' %}"><i class="fa">&#xf2bd; Profile</i></a>
                         <a class="nav-item nav-link" href="{% url 'login' %}"><i class="fa">&#xf13e; Login</i></a>
-                        <a class="nav-item nav-link" href="{% url 'register-type' %}"><i class="fa">&#xf234; Register</i></a>
+                        <a class="nav-item nav-link" href="{% url 'register-type' %}"><i class="fa">&#xf234;
+                            Register</i></a>
                     {% endif %}
                 </div>
             </div>
@@ -112,7 +114,19 @@
                     {% endif %}
                     {% block content %}{% endblock %}
                 </div>
-                <div class="col-md-4">
+
+
+                <style>
+                    div2 {
+                        height: 200px;
+                        width: 50%;
+                        background-color: rgba(124, 110, 129, 0.47);
+                    }
+                </style>
+
+
+                <div2 class="col-md-4">
+
                     <div class="site-header">
                         <h3>Covid-19 Related Links</h3>
                         <div class="list-group">
@@ -126,7 +140,8 @@
 
                     </div>
 
-                </div>
+
+                </div2>
             </div>
         </main>
 

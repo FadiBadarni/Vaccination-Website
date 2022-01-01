@@ -9,6 +9,7 @@ from .decorators import allowed_users
 from django.core.mail import send_mail
 from django.views.decorators.csrf import csrf_exempt
 
+
 def register_type(request):
     return render(request, 'users/register_type.html')
 
