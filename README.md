@@ -50,10 +50,10 @@ Takes the user to the home page .
 Takes the user to setting appointment page (only appears if user is logged in) , the appointment page contains a time table which covers an entire day's of work hours alongside having the entire days of the week available for setting an appointment in a time that is not taken .
 #### 3) FAQ :
 The FAQ section is a section that is made for questions and answers about the corona virus and some informative videos alongside.
-#### 4) ~ About : ~
-Under construction -- .
-#### 5) ~ Contact : ~
-Under construction -- .
+#### 4) About : 
+The about page contatins various information on the website and the staff alongside information about the virus itself and helpful videos
+#### 5) Contact :
+The contact page contains a contact form that when filled correctly will be sent to be reviewed by the web's crew
 #### 6) Profile :
 The profile page is where a user can see his personal info (email & name) and edit his details when needed .
 
