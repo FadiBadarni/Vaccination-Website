@@ -34,12 +34,15 @@ First you will need to navigate to : https://github.com/FadiBadarni/mysite then 
 
 Once the project is on your local machine you will need to open it with pycharm , afterwards a brief installation of CrispyForms is required using pyCharm terminal through hitting the terminal button that is found at the bottom of the pycharm application then inserting these lines of codes inside of it :
 ### pip install django-crispy-forms 
-### npm install sweetalert2
+### pip install asgiref
+### pip install Django
+### pip install Pillow
+### npm install sqlparse
 Afterwards you can run the server on your local host using : 
 ### python manage.py runserver
 
 ### Info About The DataBase : 
-
+Currently we are using the built in database that django provides , for future references we will be using either firepase or sqlite3
 
 ## Navigation In The Website :
 The website is made so it can be easy to understand and navigate in , first the user would be required to register a new account , afterwards the user goes through the login process with being able to reset his password at any given time the user would like to (through email verfication) , after logging in a new tab in the navigation bar appears in addition to the other tabs which is appointment booking because that functionality is only available upon logging into an acount .
@@ -63,7 +66,22 @@ The home page contains many elements which will be listed below :
 contains various information about various corona vaccinations .
 ### 2) Corona-Related Links : 
 contains a list of links that lead into different websites that handle various informations about the corona virus .
+### 2) The countries with the highest patient growth : 
+A Simple table that stats the leading countries in the highest patient growth
 
+## FAQ Page :
+The FAQ page contains various information in different aspects :
+### 1) Questions & Answers :
+Contains questions and answers in different topics
+
+## About Page :
+The about page Contains different information on the website's staff and the corona virus
+
+## Contact Page :
+The contact page contains a simple contact form to be sent to the website's crew for review
+
+## Appointments Page :
+This page contains the main idea of the website , in which the user is able to book an appointment in the time he wants in the day he desires , when a user books an appointment it will be saved and available for view in the user's profile where a button appears that makes the user allowed to view his appointments and the status of each appointment.
 
 ## General Info :
 The project is being developed by a second year software engineering students as a project of "Software Engineering Basics" .
