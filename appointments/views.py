@@ -1,13 +1,19 @@
 from django.shortcuts import render
-from .models import Appointment
+from django.http import HttpResponse
 
 
 def appointment(request):
     return render(request, 'appointments/reservation.html')
 
 
-def test(request):
-    Appointment.objects.create(name=request.user.username, hour=request.POST.get('hour'), min=request.POST.get('min'))
-    x = Appointment.objects.all()
-    return render(request, 'appointments/reservation.html',
-                  {'min': ('00', '15', '30', '45'), 'hours': range(8, 18), 'Appointment': x})
+@allowed_users(allowed_roles=['doctor'])
+def my_working_days(request):
+    working_days = []
+    holidays = []
+    for day in WEEK_DAYS:
+        if day[0] == request.user.profile.holiday:
+            holidays.append(day[1])
+        else:
+            working_days.append(day[1])
+    context = {'working_days': working_days, 'holidays': holidays}
+    return render(request, 'appointments/working-days.html', context)
