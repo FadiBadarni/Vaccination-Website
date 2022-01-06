@@ -16,4 +16,4 @@ def my_working_days(request):
         else:
             working_days.append(day[1])
     context = {'working_days': working_days, 'holidays': holidays}
-    return render(request, 'appointments/working-days.html', context)
+    return render(request, 'appointments/working-days.html',context)
