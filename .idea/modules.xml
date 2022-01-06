@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/mysite-Pre-Table.iml" filepath="$PROJECT_DIR$/.idea/mysite-Pre-Table.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/Pre-Table.iml" filepath="$PROJECT_DIR$/.idea/Pre-Table.iml" />
     </modules>
   </component>
 </project>
