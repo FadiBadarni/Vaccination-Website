@@ -11,3 +11,11 @@ class UserRegisterForm(UserCreationForm):
         fields = ['username', 'email', 'password1', 'password2']   # fields in order
 
 
+class ProfileUpdateForm(forms.ModelForm):
+    class Meta:
+        model = Profile
+        fields = ['image']
+
+
+class ManageHolidayForm(forms.Form):
+    holiday = forms.ChoiceField(choices=WEEK_DAYS, required=False)
