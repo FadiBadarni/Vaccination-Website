@@ -36,6 +36,17 @@ def unbook_appointment(request):
         return HttpResponseForbidden()
     return redirect('appointment')
 
+@allowed_users(allowed_roles=['admin'])
+def list_all_appointments(request):
+    appointments = Appointment.objects.all().order_by('-date_created')
+    context = {'appointments': appointments}
+    return render(request, 'appointments/list-all-appointments.html', context)
+
+@allowed_users(allowed_roles=['doctor'])
+def list_appointments(request):
+    appointments = Appointment.get_appoinments_except_day(request.user.profile.holiday).order_by('-date_created')
+    context = {'appointments': appointments}
+    return render(request, 'appointments/list-appointments.html', context)
 
 @allowed_users(allowed_roles=['doctor'])
 def my_working_days(request):
