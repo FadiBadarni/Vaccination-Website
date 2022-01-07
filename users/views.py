@@ -1,7 +1,4 @@
 from django.http.response import Http404
-from django.test import TestCase
-
-# Create your tests here.
 from django.shortcuts import render, redirect
 from django.contrib import messages
 from .forms import ProfileUpdateForm, UserRegisterForm, UserUpdateForm

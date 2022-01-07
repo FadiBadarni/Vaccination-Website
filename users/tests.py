@@ -1,8 +1,6 @@
 from django.test import TestCase
 from django.test import SimpleTestCase
-from django.urls import reverse, resolve
-from .models import *
-from users.forms import *
+from django.urls import reverse
 from django.contrib.auth.forms import UserCreationForm, UserChangeForm
 from django.test import Client
 
@@ -10,8 +8,8 @@ from django.test import Client
 class URLTest(SimpleTestCase):
 
     def test_about_page(self):
-        response = self.client.get('/contact')
-        self.assertRedirects(response, '/contact/', status_code=301, target_status_code=200, msg_prefix='',
+        response = self.client.get('/about')
+        self.assertRedirects(response, '/about/', status_code=301, target_status_code=200, msg_prefix='',
                              fetch_redirect_response=True)
 
     def test_home_page(self):
@@ -49,18 +47,6 @@ class TestViews(TestCase):
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, "users/register.html")
 
-    def test_login(self):
-        """Login Functionality Testing"""
-        response = self.client.get(reverse('login'))
-        self.assertEqual(response.status_code, 200)
-        self.assertTemplateUsed(response, "users/login.html")
-
-    def test_logout(self):
-        """Logout Function Functionality"""
-        response = self.client.get(reverse('logout'))
-        self.assertEqual(response.status_code, 200)
-        self.assertTemplateUsed(response, "users/logout.html")
-
     def test_user_register(self):
         """Testing user register pass"""
         self.user = {
@@ -73,6 +59,20 @@ class TestViews(TestCase):
         }
         response = self.client.post(reverse("register"), self.user)
         self.assertEqual(response.status_code, 200)
+
+    def test_login(self):
+        """Login Functionality Testing"""
+        response = self.client.get(reverse('login'))
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response, "users/login.html")
+
+    def test_logout(self):
+        """Logout Function Functionality"""
+        response = self.client.get(reverse('logout'))
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response, "users/logout.html")
+
+
 
     def test_username_taken(self):
         """Test function to catch username duplications"""

@@ -1,8 +1,10 @@
 {% load static %}
+{% load custom_tags %}
 <!DOCTYPE html>
 <html>
 <head>
-    <!--Scripts For Sweetify-->
+
+ <!--Scripts For Sweetify-->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10/dist/sweetalert2.all.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
           integrity="sha512-c42qTSw/wPZ3/5LBzD+Bw5f7bSF2oxou6wEb+I/lqeaKV5FDIfMvvRp772y4jcJLKuGUOpbJMdg/BTl50fJYAw=="
@@ -13,8 +15,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/11.1.9/sweetalert2.all.min.js"
             integrity="sha512-IZ95TbsPTDl3eT5GwqTJH/14xZ2feLEGJRbII6bRKtE/HC6x3N4cHye7yyikadgAsuiddCY2+6gMntpVHL1gHw=="
             crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
-
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -27,35 +27,13 @@
 
     <link rel="stylesheet" type="text/css" href="{% static 'authentication/static/authentication/main.css' %}">
 
+</head>
+<body>
     <style>
         body {
             background-image: url("https://i.ibb.co/K92XG0b/imageedit-1-4863776685.png");
-
-
         }
     </style>
-    <style>
-        .floating-right-bottom-btn {
-            position: absolute;
-            right: 8px;
-            bottom: 16px;
-            botton: 16px;
-            padding: 20px;
-            cursor: pointer;
-            color: #000000;
-            background-color: rgba(159, 13, 199, 0.47);
-            border-radius: 80%;
-            position:fixed;
-        }
-
-        .floating-right-bottom-btn:hover {
-            background-color: rgba(204, 34, 34, 0.56);
-        }
-    </style>
-
-</head>
-<body>
-
 <header class="site-header">
     <nav class="navbar navbar-expand-md navbar-dark bg-steel fixed-top">
         <div class="container">
@@ -68,12 +46,21 @@
                 <div class="navbar-nav mr-auto">
                     <a class="nav-item nav-link" href="{% url 'Web-Home' %}"><i class="fa">&#xf015; Home</i></a>
                     {% if user.is_authenticated %}
-                        <a class="nav-item nav-link" href="{% url 'appointment' %}"><i class="fa">&#xf073; Book An
-                            Appointment</i></a>
+                        <a class="nav-item nav-link" href="{% url 'appointment' %}"><i class="fa">&#xf073; Book An Appointment</i></a>
+                        {% if user|has_group:'admin' %}
+                            <div class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Settings
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="min-width: 12rem;">
+                                    <a class="nav-item nav-link text-dark" href="{% url 'list_all_appointments' %}"><i class="fa fa-clock-o"> Manage Appointments</i></a>
+                                    <a class="nav-item nav-link text-dark" href="{% url 'manage_working_days' %}"><i class="fa fa-clock-o"> Manage Working Days</i></a>
+                                </div>
+                            </div>
+                        {% endif %}
                     {% endif %}
                     <a class="nav-item nav-link" href="{% url 'FAQ-Page' %}"><i class="fa">&#xf27a; FAQ</i></a>
-                    <a class="nav-item nav-link" href="{% url 'About-Page' %}"><i class="fa">&#xf059; About The
-                        Virus</i></a>
+                    <a class="nav-item nav-link" href="{% url 'About-Page' %}"><i class="fa">&#xf059; About</i></a>
                     <a class="nav-item nav-link" href="{% url 'Contact-Page' %}"><i class="fa">&#xf1d8; Contact
                         Us</i></a>
                 </div>
@@ -83,7 +70,7 @@
                         <a class="nav-item nav-link" href="{% url 'profile' %}"><i class="fa">&#xf2bd; Profile</i></a>
                         <a class="nav-item nav-link" href="{% url 'logout' %}"><i class="fa">&#xf011; Logout</i></a>
                     {% else %}
-                        <a class="nav-item nav-link" href="{% url 'profile' %}"><i class="fa">&#xf2bd; Profile</i></a>
+
                         <a class="nav-item nav-link" href="{% url 'login' %}"><i class="fa">&#xf13e; Login</i></a>
                         <a class="nav-item nav-link" href="{% url 'register' %}"><i class="fa">&#xf234; Register</i></a>
                     {% endif %}
@@ -93,7 +80,19 @@
     </nav>
 </header>
 
-<button class="floating-right-bottom-btn"><h4><i class="fa fa-ambulance"></i></h4> Emergency Button</button>
+
+
+<div class="row">
+    <div class="col">
+        {% if messages %}
+        {% for message in messages %}
+            <div class="alert alert-{{ message.tags }}">
+                {{ message }}
+            </div>
+        {% endfor %}
+        {% endif %}
+    </div>
+</div>
 
 <footer>
     {% block footer %}
@@ -110,7 +109,17 @@
                     {% endif %}
                     {% block content %}{% endblock %}
                 </div>
-                <div class="col-md-4">
+                <style>
+                    div2 {
+                        height: 200px;
+                        width: 50%;
+                        background-color: rgba(124, 110, 129, 0.47);
+                    }
+                </style>
+
+
+                <div2 class="col-md-4">
+
                     <div class="site-header">
                         <h3>Covid-19 Related Links</h3>
                         <div class="list-group">
@@ -124,10 +133,10 @@
 
                     </div>
 
-                </div>
+
+                </div2>
             </div>
         </main>
-
     {% endblock %}
 </footer>
 
