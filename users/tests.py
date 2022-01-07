@@ -1,8 +1,47 @@
 from django.test import TestCase
-from django.urls import reverse
+from django.test import SimpleTestCase
+from django.urls import reverse, resolve
+from .models import *
+from users.forms import *
+from django.contrib.auth.forms import UserCreationForm, UserChangeForm
+from django.test import Client
+
+
+class URLTest(SimpleTestCase):
+
+    def test_about_page(self):
+        response = self.client.get('/contact')
+        self.assertRedirects(response, '/contact/', status_code=301, target_status_code=200, msg_prefix='',
+                             fetch_redirect_response=True)
+
+    def test_home_page(self):
+        url = reverse('Web-Home')
+        response = self.client.get(url)
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response, 'authentication/home.html')
+        self.assertContains(response, 'COVID-19 Vaccination Variety')
+
+    def test_faq_page(self):
+        response = self.client.get('/FAQ')
+        self.assertRedirects(response, '/FAQ/', status_code=301, target_status_code=200, msg_prefix='',
+                             fetch_redirect_response=True)
+
+    def test_contact_page(self):
+        response = self.client.get('/contact')
+        self.assertRedirects(response, '/contact/', status_code=301, target_status_code=200, msg_prefix='',
+                             fetch_redirect_response=True)
+
+
+    def test_user_register_page(self):
+        response = self.client.get('/register')
+        self.assertRedirects(response, '/register/', status_code=301, target_status_code=200, msg_prefix='',
+                             fetch_redirect_response=True)
 
 
 class TestViews(TestCase):
+
+    def setUp(self):
+        self.client = Client()
 
     def test_register(self):
         """Register Function Functionality"""
@@ -77,5 +116,10 @@ class TestViews(TestCase):
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, "users/password_reset.html")
 
-
-
+    def test_UserForm_Not_Filled(self):
+        data = {
+            'username': 'testuser123',
+            'email': 'fadybd1@gmail.com',
+        }
+        form = UserCreationForm(data)
+        self.assertFalse(form.is_valid())

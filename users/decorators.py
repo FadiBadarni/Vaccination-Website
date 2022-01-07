@@ -46,3 +46,4 @@ def user_not_confined(view_function):
         return view_function(request, *args, **kwargs)
     return wrapper_function
     # return decorator
+
