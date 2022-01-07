@@ -1,4 +1,4 @@
-**Still In Development Changes** 
+**Still In Development** 
 
 # Covid-19 Related-Website 
 
@@ -76,7 +76,7 @@ Once the project is on your local machine you will need to open it with pycharm 
 
 ### pip install Pillow 
 
-### npm install sqlparse 
+### pip install sqlparse 
 
 Afterwards you can run the server on your local host using : 
 
